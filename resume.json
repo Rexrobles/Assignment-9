@@ -1,0 +1,14 @@
+{
+    "basic info": [
+        {
+            "Last Name" : "Smith,",
+            "First Name" : "James",
+            "MIddle Name" : "Will" ,
+            "Age" : 29,
+            "Address" : "123 street Miami Florida",
+        },
+        "Contact info" : {
+            "Contact Num." : "09123456789",
+            "Email" : "JamesSmith123@gmail.com"
+        },
+        
