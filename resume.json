@@ -4,11 +4,17 @@
             "Last Name" : "Smith,",
             "First Name" : "James",
             "MIddle Name" : "Will" ,
-            "Age" : 29,
+            "Age" : 18,
             "Address" : "123 street Miami Florida",
         },
         "Contact info" : {
             "Contact Num." : "09123456789",
             "Email" : "JamesSmith123@gmail.com"
         },
-        
+    "Objectives" : [{
+        "Career Objective" : "To be associated with a growing organization that provides me with the scope to enhance my skills as per the latest trends and to become a team that progressively work towards the growth of the organization."
+        }],
+        "Educatinal Background" : {
+            
+            }
+        }
