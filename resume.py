@@ -8,6 +8,7 @@ from fpdf import FPDF
 
 
 # PDF layout and Format
+# PDF Creating
 pdf = FPDF('P', 'cm', 'A4') 
 pdf.add_page()
 
@@ -35,7 +36,7 @@ email = resumeInfos["Contact info"]["Email"]
 objective = resumeInfos["Objectives"]["Career Objective"]
 
 # educational background
-educ_tertiary1 = resumeInfos["Educational Backgroud"]["Tertiary"]["School"]
+educ_tertiary1 = resumeInfos["Educational Background"]["Tertiary"]["School"]
 educ_tertiary2 = resumeInfos["Educational Background"]["Tertiary"]["School Year"]
 educ_secondary1 = resumeInfos["Educational Background"]["Secondary"]["School"]
 educ_secondary2 = resumeInfos["Educational Background"]["Secondary"]["School Year"]
@@ -47,8 +48,27 @@ skill_1 = resumeInfos["Skill"]["Skill 1"]
 skill_2 = resumeInfos["Skill"]["Skill 2"]
 
 # customizing the header
+pdf.set_font("Arial", "B", 30)
+pdf.set_text_color(40,51,49)
+pdf.set_fill_color(215,215,215)
+pdf.cell(20, 5, f"{resumeInfos['basic info']['Last Name']}{resumeInfos['basic info']['First Name']} {resumeInfos['basic info']['Middle Name']}", ln=1, align="C", fill=1)
 
-    
-    
+# adding the basic information on pdf
+pdf.set_text_color(255,230,255)
+pdf.set_fill_color(30,51,49)
+pdf.set_font("Arial", "B", 18)
+pdf.cell(0,2, "     Personal Information", align="L", ln=2, fill=1)
+
+# adding the basic infos
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.cell(0,0.9," Age: " + (resumeInfos["basic info"]["Age"]),align="L", ln=1, fill=0)
+pdf.cell(0,0.9," Address: " + (resumeInfos["basic info"]["Address"]),align="L", ln=1, fill=0)
+pdf.cell(0,0.9," Gender: " + (resumeInfos["basic info"]["gender"]),align="L", ln=1, fill=0)
+pdf.cell(0,0.9," Birthday: " + (resumeInfos ["basic info"]["Birthday"]),align="L", ln=1, fill=0)
+pdf.cell(0,0.9," Relegion: " + (resumeInfos ["basic info"]["religion"]),align="L", ln=1, fill=0)
+pdf.cell(0,0.9," Citizenship: " + (resumeInfos ["basic info"]["citizenship"]),align="L", ln=1, fill=0)
+
 
 pdf.output("ROBLES_REX-IMMAN.pdf")
