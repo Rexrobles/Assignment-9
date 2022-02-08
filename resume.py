@@ -51,15 +51,15 @@ skill_2 = resumeInfos["Skill"]["Skill 2"]
 pdf.set_font("Arial", "B", 30)
 pdf.set_text_color(40,51,49)
 pdf.set_fill_color(215,215,215)
-pdf.cell(20, 5, f"{resumeInfos['basic info']['Last Name']}{resumeInfos['basic info']['First Name']} {resumeInfos['basic info']['Middle Name']}", ln=1, align="C", fill=1)
+pdf.cell(19, 4, f"{resumeInfos['basic info']['Last Name']}{resumeInfos['basic info']['First Name']} {resumeInfos['basic info']['Middle Name']}", ln=1, align="C", fill=1)
 
-# adding the basic information on pdf
+# adding the basic information heading
 pdf.set_text_color(255,230,255)
 pdf.set_fill_color(30,51,49)
-pdf.set_font("Arial", "B", 18)
-pdf.cell(0,2, "     Personal Information", align="L", ln=2, fill=1)
+pdf.set_font("Arial", "B", 16)
+pdf.cell(19,1, "     Personal Information", align="L", ln=2, fill=1)
 
-# adding the basic infos
+# adding the basic info 
 pdf.set_font("Arial", "")
 pdf.set_font_size(12)
 pdf.set_text_color(40,40,40)
@@ -70,5 +70,87 @@ pdf.cell(0,0.9," Birthday: " + (resumeInfos ["basic info"]["Birthday"]),align="L
 pdf.cell(0,0.9," Relegion: " + (resumeInfos ["basic info"]["religion"]),align="L", ln=1, fill=0)
 pdf.cell(0,0.9," Citizenship: " + (resumeInfos ["basic info"]["citizenship"]),align="L", ln=1, fill=0)
 
+# adding my contact info heading
+pdf.set_text_color(255,230,255)
+pdf.set_fill_color(30,51,49)
+pdf.set_font("Arial", "B", 16)
+pdf.cell(19,1, "     Contact Information", align="L", ln=2, fill=1)
+
+#adding my contact info
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.cell(0,0.9, " Contact Number: " + (resumeInfos["Contact info"]["Contact Num."]), align="L", ln=1, fill=0)
+pdf.cell(0,0.9, " Email Address: " + (resumeInfos["Contact info"]["Email"]), align="L", ln=1, fill=0)
+
+#adding the objective
+pdf.set_text_color(255,230,255)
+pdf.set_fill_color(30,51,49)
+pdf.set_font("Arial", "B", 16)
+pdf.cell(19,1, "     Objective", align="L", ln=2, fill=1)
+
+# adding objective info
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.multi_cell(0,0.9, resumeInfos["Objectives"]["Career Objective"])
+
+# for educational background
+pdf.set_text_color(255,230,255)
+pdf.set_fill_color(30,51,49)
+pdf.set_font("Arial", "B", 16)
+pdf.cell(19,1, "     Educational Background", align="L", ln=2, fill=1)
+
+# for Tertiary
+pdf.set_font("Arial", "B", 14)
+pdf.set_text_color(30,51,49)
+pdf.set_fill_color(215,215,215)
+pdf.cell(0,1, "    Tertiary", align="L", ln=1, fill=1)
+
+# adding the educational background info for Tertiary
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.cell(0,0.9, " School: " + (resumeInfos["Educational Background"]["Tertiary"]["School"]), align="L", ln=1, fill=0)
+pdf.cell(0,0.9, " School Year: " + (resumeInfos["Educational Background"]["Tertiary"]["School Year"]), align="L", ln=1, fill=0)
+
+# for Secondary
+pdf.set_font("Arial", "B", 14)
+pdf.set_text_color(30,51,49)
+pdf.set_fill_color(215,215,215)
+pdf.cell(0,1, "    Secondary", align="L", ln=1, fill=1)
+
+# adding the educational background info for Secondary
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.cell(0,0.9, " School: " + (resumeInfos["Educational Background"]["Secondary"]["School"]), align="L", ln=1, fill=0)
+pdf.cell(0,0.9, " School Year: " + (resumeInfos["Educational Background"]["Secondary"]["School Year"]), align="L", ln=1, fill=0)
+
+# for Primary
+pdf.set_font("Arial", "B", 14)
+pdf.set_text_color(30,51,49)
+pdf.set_fill_color(215,215,215)
+pdf.cell(0,1, "    Primary", align="L", ln=1, fill=1)
+
+# adding the educational background info for Primary
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.cell(0,0.9, " School: " + (resumeInfos["Educational Background"]["primary"]["School"]), align="L", ln=1, fill=0)
+pdf.cell(0,0.9, " School Year: " + (resumeInfos["Educational Background"]["primary"]["School Year"]), align="L", ln=1, fill=0)
+
+# adding my skill
+pdf.set_text_color(255,230,255)
+pdf.set_fill_color(30,51,49)
+pdf.set_font("Arial", "B", 16)
+pdf.cell(19,1, "     Skill", align="L", ln=2, fill=1)
+
+# Adding skill info
+pdf.set_font("Arial", "")
+pdf.set_font_size(12)
+pdf.set_text_color(40,40,40)
+pdf.cell(0,0.9,"  " + resumeInfos["Skill"]["Skill 1"],ln=1, fill=0)
+pdf.cell(0,0.9, "   " + resumeInfos["Skill"]["Skill 2"],ln=1, fill=0)
 
 pdf.output("ROBLES_REX-IMMAN.pdf")
