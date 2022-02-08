@@ -20,7 +20,7 @@ with open('resume.json') as datafile:
 # Basic Information
 Last_name = resumeInfos ["basic info"]["Last Name"]
 First_name = resumeInfos ["basic info"]["First Name"]
-Middle_name = resumeInfos ["basic info"]["Middle Name"]
+Middle_Initial = resumeInfos ["basic info"]["Middle Initial"]
 age = resumeInfos ["basic info"]["Age"]
 address = resumeInfos ["basic info"]["Address"]
 gender = resumeInfos ["basic info"]["gender"]
@@ -51,13 +51,14 @@ skill_2 = resumeInfos["Skill"]["Skill 2"]
 pdf.set_font("Arial", "B", 30)
 pdf.set_text_color(40,51,49)
 pdf.set_fill_color(215,215,215)
-pdf.cell(19, 4, f"{resumeInfos['basic info']['Last Name']}{resumeInfos['basic info']['First Name']} {resumeInfos['basic info']['Middle Name']}", ln=1, align="C", fill=1)
+pdf.cell(19, 4, f"{resumeInfos['basic info']['First Name']}{resumeInfos['basic info']['Middle Initial']} {resumeInfos['basic info']['Last Name']}", ln=1, align="C", fill=1)
 
 # adding the basic information heading
 pdf.set_text_color(255,230,255)
 pdf.set_fill_color(30,51,49)
 pdf.set_font("Arial", "B", 16)
 pdf.cell(19,1, "     Personal Information", align="L", ln=2, fill=1)
+pdf.image('resumepic.jpg',1, 1,3.4 )
 
 # adding the basic info 
 pdf.set_font("Arial", "")
@@ -153,4 +154,5 @@ pdf.set_text_color(40,40,40)
 pdf.cell(0,0.9,"  " + resumeInfos["Skill"]["Skill 1"],ln=1, fill=0)
 pdf.cell(0,0.9, "   " + resumeInfos["Skill"]["Skill 2"],ln=1, fill=0)
 
+# output pdf
 pdf.output("ROBLES_REX-IMMAN.pdf")
